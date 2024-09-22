@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Business Health Calculator</title>
+</head>
+<body>
+
+<h1>Business Health Calculator</h1>
+
+<div class="tab-buttons">
+    <button class="tab-button active" onclick="showTab(0)">1. Time</button>
+    <button class="tab-button" onclick="showTab(1)" disabled>2. Team</button>
+    <button class="tab-button" onclick="showTab(2)" disabled>3. Money</button>
+    <button class="tab-button" onclick="showTab(3)" disabled>4. Systems</button>
+</div>
+
+<form id="healthForm">
+
+    <!-- Time Management Tab -->
+    <div class="tab active" id="timeTab">
+        <h2>How Do You Manage Your Time?</h2>
+
+        <div class="question">
+            <label>1. Is there enough time in your day to get work done?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes, my days are well planned and almost every task is completed.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Yes, although some important tasks are not completed.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Rarely, I struggle to keep up.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">Never. I am overwhelmed with my workload.</div>
+        </div>
+
+        <div class="question">
+            <label>2. On average, how many hours do you work a week?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">My business works without me, I work less than 20 hours in the business.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">20 and 45 hours a week and I play a role in my day-to-day business.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">45 and 55 hours and I am critical to my business’s success.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">60+ hours per week and I am my business.</div>
+        </div>
+
+        <div class="question">
+            <label>3. How do you currently manage your workload?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">I prioritize my tasks and achieve many long-term strategies.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Tasks are completed based on a daily level of urgency.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">My days are largely disorganized, with many interruptions.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">I am not sure.</div>
+        </div>
+
+        <div class="question">
+            <label>4. Are you able to spend quality time with the people you care about?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes, I always have time with my family and friends.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">I can take time off when I must but it is not as often as I’d like.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">I occasionally take time off, but it is very rare.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">No, I put all my time into my business and cannot ever take off.</div>
+        </div>
+
+        <div class="question">
+            <label>5. Do you use time in meetings to your advantage?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes, meetings are concise, planned and focused on achieving our objectives.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Yes, but meetings are often too long, not very organized, and/or infrequent.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">No, our meetings do not use time effectively.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">We do not have regular meetings.</div>
+        </div>
+
+        <div class="question">
+            <label>6. How do you manage your free time?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">I have an hour or more of free time a day, with regular exercise, hobbies, relaxing and reading.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">I occasionally have time for regular exercise, hobbies, relaxing and reading.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">I struggle to find time for regular exercise, hobbies, relaxing and reading.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">I often feel as though I cannot relax, and I keep thinking of work.</div>
+        </div>
+
+        <button type="button" onclick="nextTab(1)">Next</button>
+    </div>
+
+    <!-- Team Tab -->
+    <div class="tab" id="teamTab">
+        <h2>How Do You Manage Your Team?</h2>
+
+        <div class="question">
+            <label>1. How do your employees work together as a team?*</label>
+            <div class="option" data-score="1" onclick="selectOption(this)">My employees do not work together as a team.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">There are some personality clashes.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">The team works effectively most of the time.</div>
+            <div class="option" data-score="4" onclick="selectOption(this)">There is synergy among all members of the team.</div>
+        </div>
+
+        <div class="question">
+            <label>2. Does your team identify with your company?*</label>
+            <div class="option" data-score="1" onclick="selectOption(this)">No. Most employees are here for a paycheck.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Some employees identify with our company.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Yes. Most understand and we have a strong culture.</div>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes. Every member of my team is a walking/talking advertisement for the company.</div>
+        </div>
+
+        <div class="question">
+            <label>3. What level of communication occurs within your team?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Communication is highly effective.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Communication is mostly effective.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">There are frequent communication challenges within the team.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">Communication is poor.</div>
+        </div>
+
+        <div class="question">
+            <label>4. What level of understanding do your team members have about their role?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Written job descriptions, regularly scheduled reviews and performance-based incentives make roles clear.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">There is some formal structure and employees receive feedback occasionally.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Team members "hit the ground running" with little instruction or review.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">Team members are often confused about roles and how they impact the business.</div>
+        </div>
+
+        <div class="question">
+            <label>5. Do you consult your team members for suggestions for improvements?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">I often use team member suggestions.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Team members often leave feedback, I rarely find it valuable.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">I have asked however team members do not leave feedback.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">I have not asked for feedback in over 6 months.</div>
+        </div>
+
+        <div class="question">
+            <label>6. Do you let your team members know when you are proud of their work?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes - I make a conscious effort to tell them.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Yes - but I am not consistent enough.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">I tell everyone else on the team but that person.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">No – I am too busy and do not dedicate time to celebrating my team.</div>
+        </div>
+
+        <button type="button" onclick="nextTab(2)">Next</button>
+    </div>
+
+    <!-- Money Tab -->
+    <div class="tab" id="moneyTab">
+        <h2>How Do You Manage Your Money?</h2>
+
+        <div class="question">
+            <label>1. Does your company stick to a clearly defined budget?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes. The budget is always adhered to.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Sometimes. The budget is considered more of a guide.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Rarely. The budget is generally not followed.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">No. We do not use a budget.</div>
+        </div>
+
+        <div class="question">
+            <label>2. How often do you complete your financial statements?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Weekly or Monthly.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Quarterly.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Every Six months.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">Yearly.</div>
+            <div class="option" data-score="0" onclick="selectOption(this)">We do not have organized financial statements.</div>
+        </div>
+
+        <div class="question">
+            <label>3. How has your profit margin performed this past financial year?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Increased.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Decreased.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Remained Constant.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">Not sure.</div>
+        </div>
+
+        <div class="question">
+            <label>4. What is your cashflow outlook for the next 12 months?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">A positive cashflow result is forecast.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">A negative cashflow result is forecast.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">I never have enough cash to pay my bills.</div>
+            <div class="option" data-score="0" onclick="selectOption(this)">I do not monitor my cashflow.</div>
+        </div>
+
+        <div class="question">
+            <label>5. How does your company set its prices?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Add X% markup to the cost price.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Undercut the competition.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Estimate market value.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">I have not reviewed pricing in over a year.</div>
+        </div>
+
+        <button type="button" onclick="nextTab(3)">Next</button>
+    </div>
+
+    <!-- Systems Tab -->
+    <div class="tab" id="systemsTab">
+        <h2>Do You Have the Systems in Place to Efficiently Run Your Business?</h2>
+
+        <div class="question">
+            <label>1. Does your company stick to a clearly defined business plan?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Yes, and we review our business plan every 90 days.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Yes, and we review our business plan regularly.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">No, we rarely use/update the business.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">No, we do not have a formal business plan.</div>
+        </div>
+
+        <div class="question">
+            <label>2. How organized are your company's systems and procedures?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">The company runs like clockwork because of highly efficient systems and procedures.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Some systems and procedures are working but there is still room for improvement.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">The systems and procedures are out of date and need updating to become efficient.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">There are no/very few formal systems and procedures in place.</div>
+        </div>
+
+        <div class="question">
+            <label>3. Which of the following best describes your company's employee systems?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">We have formal written policies and reviews.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">We invest in our employees, providing training as well as formal written systems and policies.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">We use verbal communication and handle situations on an individual basis.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">There is no formally systemized way to educate our people in the aspects of my business.</div>
+        </div>
+
+        <div class="question">
+            <label>4. What delivery and distribution procedures have you implemented for systemizing processes in your business?*</label>
+            <div class="option" data-score="1" onclick="selectOption(this)">We do not have any formally systemized delivery or distribution.</div>
+            <div class="option" data-score="4" onclick="selectOption(this)">We forecast customer demand to plan for stock movement and have purchasing and stock receiving system is in place.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">We review our delivery and distribution systems and check inventory on a quarterly basis.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">We purchase on demand due to cashflow and do not run an effective inventory.</div>
+        </div>
+
+        <div class="question">
+            <label>5. How do you test and measure the Marketing Strategies in your business?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">We measure performance daily.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">We review our marketing investment quarterly and have a general feel for the results they produce.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">We turn our marketing investments on and off mostly based on instinct vs. data and measured results.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">There is no marketing budget, and we do not have a plan to create one.</div>
+        </div>
+
+        <div class="question">
+            <label>6. What technology procedures have you added to systemize your business?*</label>
+            <div class="option" data-score="4" onclick="selectOption(this)">Operations are mostly automated, and we frequently update with new technology.</div>
+            <div class="option" data-score="3" onclick="selectOption(this)">Some of our business is automated but there is opportunity to invest further.</div>
+            <div class="option" data-score="2" onclick="selectOption(this)">Our technology still works, but it is outdated and requires involvement to keep things moving.</div>
+            <div class="option" data-score="1" onclick="selectOption(this)">We have minimal technology in our company and no plan to invest.</div>
+        </div>
+
+        <button type="button" onclick="calculateScores()">Calculate Health Scores</button>
+    </div>
+
+</form>
+
+<div id="results" class="section">
+    <h2>Results</h2>
+    <p>Time Management: <span id="timeScore" class="score"></span></p>
+    <p>Team: <span id="teamScore" class="score"></span></p>
+    <p>Money: <span id="moneyScore" class="score"></span></p>
+    <p>Systems: <span id="systemsScore" class="score"></span></p>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+
